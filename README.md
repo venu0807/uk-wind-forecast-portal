@@ -1,4 +1,4 @@
-# kjhwr7 — UK Wind Forecast Portal
+# UK Wind Forecast Portal
 
 A full-stack web application for UK energy utility trading teams to view national wind generation forecasts and evaluate their accuracy, using exclusively Elexon BMRS data. Scoped to **January 2026** delivery days.
 
@@ -12,15 +12,15 @@ This application was developed with assistance from **Google Antigravity (AI cod
 
 | Service | URL |
 |---|---|
-| **Frontend** | https://kjhwr7-web.herokuapp.com *(after deployment)* |
-| **Backend API Docs** | https://kjhwr7-api.herokuapp.com/docs *(after deployment)* |
+| **Frontend** | https://uk-wind-forecast-portal-web.herokuapp.com *(after deployment)* |
+| **Backend API Docs** | https://uk-wind-forecast-portal-api.herokuapp.com/docs *(after deployment)* |
 
 ---
 
 ## 📁 Directory Structure
 
 ```
-kjhwr7/
+uk-wind-forecast-portal/
 ├── backend/                    Python FastAPI backend
 │   ├── app/
 │   │   ├── main.py             FastAPI app entry — CORS, router registration
@@ -74,8 +74,8 @@ kjhwr7/
 ### Start with Docker Compose
 
 ```bash
-git clone https://github.com/venu0807/kjhwr7.git
-cd kjhwr7
+git clone https://github.com/venu0807/uk-wind-forecast-portal.git
+cd uk-wind-forecast-portal
 docker-compose up --build
 ```
 
@@ -138,15 +138,15 @@ Computed per delivery day across all 48 half-hour settlement periods:
 heroku login && heroku container:login
 
 # Backend
-heroku create kjhwr7-api --stack container
-heroku container:push web --app kjhwr7-api --context-path ./backend
-heroku container:release web --app kjhwr7-api
-heroku config:set CORS_ORIGINS=https://kjhwr7-web.herokuapp.com --app kjhwr7-api
+heroku create uk-wind-forecast-portal-api --stack container
+heroku container:push web --app uk-wind-forecast-portal-api --context-path ./backend
+heroku container:release web --app uk-wind-forecast-portal-api
+heroku config:set CORS_ORIGINS=https://uk-wind-forecast-portal-web.herokuapp.com --app uk-wind-forecast-portal-api
 
 # Frontend
-heroku create kjhwr7-web --stack container
-heroku container:push web --app kjhwr7-web --context-path ./frontend \
-  --arg VITE_API_URL=https://kjhwr7-api.herokuapp.com
-heroku container:release web --app kjhwr7-web
-heroku config:set PORT=80 --app kjhwr7-web
+heroku create uk-wind-forecast-portal-web --stack container
+heroku container:push web --app uk-wind-forecast-portal-web --context-path ./frontend \
+  --arg VITE_API_URL=https://uk-wind-forecast-portal-api.herokuapp.com
+heroku container:release web --app uk-wind-forecast-portal-web
+heroku config:set PORT=80 --app uk-wind-forecast-portal-web
 ```
