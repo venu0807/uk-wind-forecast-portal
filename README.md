@@ -12,8 +12,9 @@ This application was developed with assistance from **Google Antigravity (AI cod
 
 | Service | URL |
 |---|---|
-| **Frontend** | https://uk-wind-forecast-portal-web.herokuapp.com *(after deployment)* |
-| **Backend API Docs** | https://uk-wind-forecast-portal-api.herokuapp.com/docs *(after deployment)* |
+| **Live App** | **https://uk-wind-forecast-portal.vercel.app** |
+| **API Health** | **https://uk-wind-forecast-portal.vercel.app/health** |
+| **Accuracy API** | **https://uk-wind-forecast-portal.vercel.app/api/accuracy** |
 
 ---
 
