@@ -74,7 +74,7 @@ kjhwr7/
 ### Start with Docker Compose
 
 ```bash
-git clone https://github.com/<anon-user>/kjhwr7.git
+git clone https://github.com/venu0807/kjhwr7.git
 cd kjhwr7
 docker-compose up --build
 ```
