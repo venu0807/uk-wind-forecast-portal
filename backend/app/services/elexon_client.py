@@ -25,10 +25,10 @@ async def fetch_wind_actuals(from_dt: datetime, to_dt: datetime) -> list[dict]:
 
 
 async def fetch_wind_forecasts(from_dt: datetime, to_dt: datetime) -> list[dict]:
-    """Fetch WINDFOR forecasts from Elexon for the given delivery window."""
+    """Fetch WINDFOR forecasts from Elexon for the given publishing window."""
     params = {
-        "from": from_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "to": to_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "publishDateTimeFrom": from_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "publishDateTimeTo": to_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     resp = await _client.get(f"{BASE_URL}/datasets/WINDFOR/stream", params=params)
     resp.raise_for_status()
